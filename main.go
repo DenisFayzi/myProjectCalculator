@@ -11,9 +11,7 @@ import (
 // Функция для превращения римских в арабские.
 func romanToArabic(r string) int {
 	// Мапа для соответствия римских чисел арабским
-	romanNumerals := map[string]int{
-		"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
-		"VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}
+	romanNumerals := map[string]int{}
 
 	// Поиск значения в мапе
 	val, exists := romanNumerals[r]
@@ -32,6 +30,8 @@ func arabicToRoman(arabicNumber int) string {
 		value  int
 		symbol string
 	}{
+		{100, "C"},
+		{50, "L"},
 		{10, "X"},
 		{9, "IX"},
 		{5, "V"},
