@@ -91,8 +91,8 @@ func main() {
 		result := calculate(a, b, operator)
 
 		if isRoman {
-			if result < 1 {
-				panic("Римские числа не могут быть меньше 1")
+			if result < 0 {
+				panic("Римские числа не могут быть меньше 0")
 			}
 			fmt.Println("Результат:", arabicToRoman(result))
 		} else {
