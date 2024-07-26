@@ -104,7 +104,8 @@ func main() {
 func parseInput(input string) (int, int, string, bool) {
 	var a, b int
 	var operator string
-	isRoman := false
+	isRomanA := false
+	isRomanB := true
 
 	switch {
 	case strings.Contains(input, "+"):
@@ -124,13 +125,17 @@ func parseInput(input string) (int, int, string, bool) {
 		panic("Не верный формат ввода!")
 	}
 	aStr, bStr := strings.TrimSpace(parts[0]), strings.TrimSpace(parts[1])
-	a, isRoman = ConvertingStr(aStr)
-	b, _ = ConvertingStr(bStr)
+	a, isRomanA = ConvertingStr(aStr)
+	b, isRomanB = ConvertingStr(bStr)
+
+	if isRomanA != isRomanB {
+		panic("Нельзя смешивать римские и арабские числа!")
+	}
 
 	if a < 1 || a > 10 || b < 1 || b > 10 {
 		panic("Числа должны быть от 1 до 10 включительно")
 	}
-	return a, b, operator, isRoman
+	return a, b, operator, isRomanA
 
 }
 
