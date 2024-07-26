@@ -14,7 +14,7 @@ func romanToArabic(r string) int {
 
 	romanNumerals := map[string]int{
 		"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5,
-		"VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10,
+		"VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10, "XL": 40,
 		"L": 50, "C": 100}
 
 	// Поиск значения в мапе
@@ -36,6 +36,7 @@ func arabicToRoman(arabicNumber int) string {
 	}{
 		{100, "C"},
 		{50, "L"},
+		{40, "XL"},
 		{10, "X"},
 		{9, "IX"},
 		{5, "V"},
